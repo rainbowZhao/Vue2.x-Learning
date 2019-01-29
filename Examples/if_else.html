@@ -8,11 +8,22 @@
     <title>Vue learning</title>
 </head>
 <body>
-    <div>
-      <ul>
-        <li><a href="../Examples/HelloWorld.html">Hello World!</a></li>
-        <li><a href="../Examples/if_else.html">if_else test</a></li>
-      </ul>
+    <div id="app">
+       <ul>
+         <li v-if="ifShown">if true show me</li>
+         <li v-else="ifShown">if false show me</li>
+       </ul> 
     </div>
+    
+    <script type="text/javascript">
+      var app = new Vue({
+          el: "#app",
+          data:{
+              ifShown: false
+          }
+
+          
+      })
+    </script>
 </body>
 </html>
