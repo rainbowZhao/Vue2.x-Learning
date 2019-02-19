@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue learning</title>
+
+    <style>
+        .classA {
+          color: black;
+          font-size: 30px;
+          font-weight: bold;
+        }
+        .classB {
+            border: 1px solid yellow;
+            color: red;
+        }
+      </style>
+</head>
+<body>
+    <div id="app">
+      <img v-bind:src="imgSrc?imgSrcA:imgSrcB" alt=""> 
+      
+      <div :class="[classA,classB]">给class 绑定组数</div>
+      <hr>
+      <div>
+          <input type="checkbox" name="" id="isOk" v-model="isOk" /> <label for="isOk">isOk={{isOk}}}</label> <br />
+          <div :class="isOk?classA:classB">对象绑定style 对象</div>
+      </div>
+      <br>
+      <div :style="styleObj">对象绑定style 对象</div>
+    </div>
+
+    
+    
+    <script type="text/javascript">
+      var app = new Vue({
+          el: "#app",
+          data: {
+            imgSrc: false,
+            imgSrcA: '../Assets/images/timg.jpg',
+            imgSrcB: '../Assets/images/timg02.jpg',
+            classA: 'classA',
+            classB: 'classB',
+            isOk: true,
+            styleObj: {
+                display: 'inline-block',
+                color: 'green',
+                fontSize: '45px',
+                backgroundColor: 'red'
+            }
+          }         
+      })
+
+    
+    </script>
+
+</body>
+</html>
