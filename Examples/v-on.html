@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue learning</title>
+</head>
+<body>
+    <div id="app">
+        本场比赛得分：{{count}}<br />
+      
+      <input type="button" value="add" v-on:click="addScore" />
+      <input type="button" value="minus" v-on:click="minusScore" />
+      <input type="text" v-on:keyup.enter="onEnter" v-model="secondCount" />
+    </div>
+    
+    <script type="text/javascript">
+      var app = new Vue({
+          el: "#app",
+          data: {
+            count: 5,      
+          },
+          methods: {
+            addScore: function(){
+                this.count++;
+            },
+            minusScore: function(){
+                this.count--;
+            },
+            onEnter: function(){
+                this.count=this.count+parseInt(this.secondCount);
+            }
+          }
+
+          
+      })
+    </script>
+</body>
+</html>
